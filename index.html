@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>The library</h1>
+    </header>
+    <section class="main">
+      <div class="bookcard" id="book-card">
+        
+      </div>
+
+      <button id="book-btn">Add a new book</button>
+
+      <dialog id="bookDialog">
+        <h2>Add a new book to your library</h2>
+        <form method="dialog">
+          <label>
+            Title:
+            <input type="text" name="title" id="title" />
+          </label>
+
+          <label>
+            Author:
+            <input type="text" name="author" id="author" />
+          </label>
+
+          <label>
+            Pages:
+            <input type="number" name="pages" id="pages" />
+          </label>
+
+          <label>
+            Read:
+            <input type="checkbox" name="read" id="read" id="read" />
+          </label>
+          <button type="submit" id="submit-btn">Add</button>
+        </form>
+      </dialog>
+    </section>
+    <footer>
+      Photo by
+      <a
+        href="https://unsplash.com/@giamboscaro?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >Giammarco Boscaro</a
+      >
+      on
+      <a
+        href="https://unsplash.com/photos/book-lot-on-black-wooden-shelf-zeH-ljawHtg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >Unsplash</a
+      >
+    </footer>
+    <script src="app.js" async defer></script>
+  </body>
+</html>
