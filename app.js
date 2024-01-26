@@ -1,7 +1,8 @@
-let bookcard = document.getElementById("book-card");
+const bookcard = document.getElementById("book-card");
 const addBook = document.getElementById("book-btn");
 const dialog = document.getElementById("bookDialog");
 const submit = document.getElementById("submit-btn");
+const deleteBtn = document.querySelector(".delete-btn");
 
 const book = new Book(
   (title = "Harry Potter and the Sorcerer's Stone"),
@@ -19,6 +20,7 @@ const displayBooks = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     const book = arr[i];
     const div = document.createElement("div");
+    div.dataset.bookId = i;
     bookcard.appendChild(div);
     const title = document.createElement("h1");
     title.textContent = book.title;
@@ -30,6 +32,8 @@ const displayBooks = (arr) => {
     read.textContent = book.read;
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.dataset.bookId = i;
     div.appendChild(title);
     div.appendChild(author);
     div.appendChild(pages);
@@ -39,14 +43,6 @@ const displayBooks = (arr) => {
 };
 
 displayBooks(myLibrary);
-
-function openCheck(dialog) {
-  if (dialog.open) {
-    console.log("Dialog open");
-  } else {
-    console.log("Dialog closed");
-  }
-}
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -60,7 +56,6 @@ function addBookToLibrary() {
   const authorInput = document.getElementById("author");
   const pagesInput = document.getElementById("pages");
   const readInput = document.getElementById("read");
-
   const newBook = new Book();
   newBook.title = titleInput.value;
   newBook.author = authorInput.value;
@@ -70,9 +65,16 @@ function addBookToLibrary() {
   displayBooks(myLibrary);
 }
 
+bookcard.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-btn")) {
+    const bookId = e.target.dataset.bookId;
+    myLibrary = myLibrary.filter((book, index) => index !== parseInt(bookId));
+    displayBooks(myLibrary);
+  }
+});
+
 addBook.addEventListener("click", () => {
   dialog.showModal();
-  openCheck(dialog);
 });
 
 submit.addEventListener("click", (e) => {
