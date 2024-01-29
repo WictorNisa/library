@@ -30,6 +30,7 @@ const displayBooks = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     const book = arr[i];
     const div = document.createElement("div");
+    div.classList.add('book-box')
     div.dataset.bookId = i;
     bookcard.appendChild(div);
     const title = document.createElement("h1");
@@ -50,6 +51,7 @@ const displayBooks = (arr) => {
 
     
     const toggleReadBtn = document.createElement("button");
+    toggleReadBtn.classList.add("toggleStatus-btn")
     toggleReadBtn.textContent = "Toggle Read Status";
     toggleReadBtn.dataset.bookId = i;
 

@@ -12,51 +12,54 @@
     <header>
       <h1>The library</h1>
     </header>
+    <div class="add-book-container">
+      <p>
+        Welcome to the library, store your books so you can keep watch over what
+        you read
+      </p>
+      <button id="book-btn">New book</button>
+    </div>
     <section class="main">
-      <div class="bookcard" id="book-card">
+      <div class="overlay">
+        <div class="book-container">
+          <div class="bookcard" id="book-card"></div>
+        </div>
+
+        <dialog id="bookDialog">
+          <h2>Add a new book to your library</h2>
+          <form method="dialog">
+            <label>
+              Title:
+              <input
+                type="text"
+                name="title"
+                id="title"
+                data-title="book-title"
+              />
+            </label>
+
+            <label>
+              Author:
+              <input type="text" name="author" id="author" />
+            </label>
+
+            <label>
+              Pages:
+              <input type="number" name="pages" id="pages" />
+            </label>
+
+            <label>
+              Read:
+              <input type="checkbox" name="read" id="read" id="read" />
+            </label>
+            <button type="submit" id="submit-btn">Add</button>
+          </form>
+        </dialog>
         
       </div>
-
-      <button id="book-btn">Add a new book</button>
-
-      <dialog id="bookDialog">
-        <h2>Add a new book to your library</h2>
-        <form method="dialog">
-          <label>
-            Title:
-            <input type="text" name="title" id="title" data-title="book-title"/>
-          </label>
-
-          <label>
-            Author:
-            <input type="text" name="author" id="author" />
-          </label>
-
-          <label>
-            Pages:
-            <input type="number" name="pages" id="pages" />
-          </label>
-
-          <label>
-            Read:
-            <input type="checkbox" name="read" id="read" id="read" />
-          </label>
-          <button type="submit" id="submit-btn">Add</button>
-        </form>
-      </dialog>
+      
     </section>
-    <footer>
-      Photo by
-      <a
-        href="https://unsplash.com/@giamboscaro?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-        >Giammarco Boscaro</a
-      >
-      on
-      <a
-        href="https://unsplash.com/photos/book-lot-on-black-wooden-shelf-zeH-ljawHtg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-        >Unsplash</a
-      >
-    </footer>
+   
     <script src="app.js" async defer></script>
   </body>
 </html>

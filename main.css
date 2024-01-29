@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
 }
 
 :root {
@@ -11,25 +13,167 @@
   --dim-gray: #5c6061ff;
   --bistre: #31251aff;
   --silver: #cacfd0ff;
+  --white: #fff;
   --charcoal: #2a3d4aff;
 }
 
-header{
-    width: 100%;
-    height: 40%;
-    background-color: var(--silver);
+header {
+  width: 100%;
+  height: 100px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body{
-    height: 100%;
-    width: 100%;
-    /* background-image: url('./hero.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
-    
+header h1 {
+  font-size: 2.5em;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--charcoal);
 }
 
-#bookDialog{
-    height: 200px;
-    height: 200px;
+.add-book-container {
+  width: 100%;
+  height: 60px;
+  background-color: var(--silver);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-book-container p {
+  letter-spacing: 1px;
+  color: var(--charcoal);
+}
+
+#book-btn {
+  padding: 5px;
+  width: 100px;
+  border: 1px solid var(--charcoal);
+  background-color: var(--charcoal);
+  color: var(--silver);
+  border-radius: 5px;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  background: url("./hero.jpg");
+  background-size: cover;
+}
+
+.bookcard {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+}
+
+.book-box {
+  width: 100%;
+  height: 100%;
+  background-color: var(--charcoal);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-box h1 {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 0 auto 1em auto;
+  color: var(--silver);
+}
+
+.book-box p {
+  padding: 0 0.5em 0.5em 0;
+  color: var(--silver);
+}
+
+.delete-btn,
+.toggleStatus-btn {
+  padding: 5px;
+  width: 100px;
+  border: 1px solid var(--eerie-black);
+  background-color: var(--eerie-black);
+  color: var(--silver);
+  border-radius: 5px;
+  margin-bottom: 1em;
+  justify-self: flex-end;
+}
+
+/* FORM STYLES */
+
+#bookDialog {
+  height: 400px;
+  height: 400px;
+  margin: auto;
+  backdrop-filter: blur(5px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--charcoal);
+}
+
+form {
+  height: 60%;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+label {
+  width: 150px;
+  margin: auto;
+}
+
+#submit-btn {
+  padding: 5px;
+  width: 100px;
+  border: 1px solid var(--eerie-black);
+  background-color: var(--eerie-black);
+  color: var(--silver);
+  border-radius: 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* CUSTOM DIVIDER STYLES */
+
+.custom-shape-divider-bottom-1706285552 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1706285552 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-bottom-1706285552 .shape-fill {
+  fill: #ffffff;
 }
